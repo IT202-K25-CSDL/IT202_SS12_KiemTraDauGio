@@ -125,7 +125,7 @@ BEGIN
     );
 END //
 DELIMITER ;
-CALL GetTopScoreStudent('C00001');
+CALL GetTopScoreStudent('CS102');
 
 -- C
 -- 6 
@@ -134,7 +134,7 @@ SELECT e.StudentID, e.CourseID, e.Score
 FROM Enrollment e
 JOIN Student s ON e.StudentID = s.StudentID
 JOIN Department d ON s.DeptID = d.DeptID
-WHERE d.DeptID = 'IT' AND e.CourseID = 'C00001'
+WHERE d.DeptID = 'IT' AND e.CourseID = 'CS102'
 WITH CHECK OPTION;
 
 DELIMITER //
@@ -152,4 +152,4 @@ BEGIN
 END //
 DELIMITER ;
 
-CALL UpdateScoreITDB('S00001', 11.5);
+CALL UpdateScoreITDB('CS102', 11.5);
